@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
 const CancelToken = axios.CancelToken
+
+
 class HttpRequest {
   constructor () {
     this.queue = [] // 请求队列
@@ -13,17 +15,20 @@ class HttpRequest {
   request (options) {
     const instance = axios.create()
     const unionOptions = Object.assign(this.getInsideConfig(), options)
-    // this.interceptors(instance, unionOptions.url)
+    this.interceptors(instance, unionOptions.url)
     return instance(unionOptions)
   }
 
   // 默认设置
   getInsideConfig (headers) {
     const config = {
+       baseURL: this.baseUrl,
       headers: Object.assign({
         'Content-Type': 'application/json'
       }, headers)
     }
+    // alert(config)
+    console.log(config,'config')
     return config
   }
 

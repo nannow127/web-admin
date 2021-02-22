@@ -17,6 +17,8 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "compression-webpack-plugin": "^7.1.2",
+    "generate-asset-webpack-plugin": "^0.3.0",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.0",
     "sass-resources-loader": "^2.1.1",
